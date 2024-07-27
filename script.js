@@ -12,9 +12,16 @@ slider.addEventListener('input', function() {
 
 window.addEventListener('load', function() {
     const savedValue = localStorage.getItem('sliderValue'); 
-    slider.value = savedValue;
-    sliderValueDisplay.textContent = `Grid Size: ${savedValue} x ${sliderValue}`;
-    createItems(savedValue);
+    if (savedValue) {
+        slider.value = savedValue;
+        sliderValueDisplay.textContent = `Grid Size: ${savedValue} x ${savedValue}`;
+        createItems(savedValue);
+    } else {
+        const defaultSize = 16;
+        slider.value = defaultSize;
+        sliderValueDisplay.textContent = `Grid Size: ${defaultSize} x ${defaultSize}`;
+        createItems(defaultSize);
+    }
 });
 
 const createItems = (gridSize) => {
