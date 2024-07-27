@@ -54,6 +54,7 @@ body {
     transition: background-color 0.2s ease;
     cursor: pointer;
     margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .clearBtn:hover {
